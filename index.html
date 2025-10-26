@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>HAPPY BIRTHDAY!!!</title>
 <style>
-  /* 90er Trash vibes */
   @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
   html,body{height:100%;margin:0;}
   body{
@@ -15,116 +14,21 @@
     color:#000;
     text-align:center;
   }
-
-  /* big cheesy header */
-  .header {
-    position:relative;
-    z-index:5;
-    padding-top:40px;
-    text-shadow: 4px 4px 0 rgba(255,255,255,0.8), -4px -4px 0 rgba(0,0,0,0.2);
-  }
-  h1{
-    font-size:6.5rem;
-    margin:0;
-    letter-spacing:6px;
-    transform: rotate(-6deg);
-    display:inline-block;
-    padding:10px 20px;
-    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.15) 0 10px, rgba(255,255,255,0.05) 10px 20px);
-    border:6px dashed #ff007f;
-    border-radius:16px;
-  }
-
-  /* blinking / marquee-ish */
-  .blink {
-    animation: blink 1s linear infinite;
-    display:inline-block;
-    margin-left:10px;
-  }
-  @keyframes blink {
-    0%{opacity:1; transform:scale(1);}
-    50%{opacity:0.25; transform:scale(1.08);}
-    100%{opacity:1; transform:scale(1);}
-  }
-
-  /* Buttons */
-  .controls {
-    margin-top:18px;
-    z-index:6;
-    position:relative;
-  }
-  button {
-    font-size:1rem;
-    padding:10px 14px;
-    margin:6px;
-    border-radius:12px;
-    border:3px groove #fff;
-    cursor:pointer;
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
-    background:linear-gradient(#fff,#ffe6f0);
-    font-weight:700;
-  }
-
-  /* QR container */
-  #qrWrap {
-    margin-top:14px;
-    z-index:6;
-    position:relative;
-  }
+  .header { position:relative; z-index:5; padding-top:40px; text-shadow: 4px 4px 0 rgba(255,255,255,0.8), -4px -4px 0 rgba(0,0,0,0.2); }
+  h1{ font-size:6.5rem; margin:0; letter-spacing:6px; transform: rotate(-6deg); display:inline-block; padding:10px 20px; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.15) 0 10px, rgba(255,255,255,0.05) 10px 20px); border:6px dashed #ff007f; border-radius:16px; }
+  .blink { animation: blink 1s linear infinite; display:inline-block; margin-left:10px; }
+  @keyframes blink { 0%{opacity:1; transform:scale(1);} 50%{opacity:0.25; transform:scale(1.08);} 100%{opacity:1; transform:scale(1);} }
+  .controls { margin-top:18px; z-index:6; position:relative; }
+  button { font-size:1rem; padding:10px 14px; margin:6px; border-radius:12px; border:3px groove #fff; cursor:pointer; box-shadow: 3px 3px 0 rgba(0,0,0,0.2); background:linear-gradient(#fff,#ffe6f0); font-weight:700; }
+  #qrWrap { margin-top:14px; z-index:6; position:relative; }
   #qrImage { border:6px double #ff00aa; background:#fff; padding:6px;}
-
-  /* canvas full screen for fireworks */
-  #fwCanvas{
-    position:fixed;
-    inset:0;
-    z-index:1;
-    pointer-events:none;
-  }
-
-  /* tacky floating GIF-like stars (pure CSS) */
-  .star {
-    position:fixed;
-    width:40px;height:40px;
-    background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,0,0.5) 35%, rgba(255,0,255,0.15) 60%);
-    border-radius:50%;
-    box-shadow:0 0 24px rgba(255,255,0,0.5), inset 0 0 10px rgba(255,255,255,0.6);
-    transform:rotate(15deg);
-    animation: floaty 4s linear infinite;
-    z-index:3;
-    opacity:0.9;
-  }
-  @keyframes floaty {
-    0%{transform: translateY(0) rotate(0deg) scale(1);}
-    50%{transform: translateY(-30px) rotate(45deg) scale(1.05);}
-    100%{transform: translateY(0) rotate(0deg) scale(1);}
-  }
-
-  /* bottom marquee */
-  .marquee {
-    position:fixed;
-    bottom:0;
-    width:100%;
-    z-index:7;
-    background: linear-gradient(90deg, rgba(0,0,0,0.05), rgba(255,255,255,0.15));
-    padding:6px 0;
-  }
-  .marquee p{
-    display:inline-block;
-    white-space:nowrap;
-    animation: slide 12s linear infinite;
-    font-weight:900;
-    font-size:1.1rem;
-  }
-  @keyframes slide{
-    0%{transform:translateX(100%)}
-    100%{transform:translateX(-120%)}
-  }
-
-  /* small responsive tweaks */
-  @media (max-width:600px){
-    h1{font-size:3.2rem; padding:8px;}
-    .star{width:26px;height:26px;}
-  }
+  #fwCanvas{ position:fixed; inset:0; z-index:1; pointer-events:none; }
+  .star { position:fixed; width:40px;height:40px; background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,0,0.5) 35%, rgba(255,0,255,0.15) 60%); border-radius:50%; box-shadow:0 0 24px rgba(255,255,0,0.5), inset 0 0 10px rgba(255,255,255,0.6); transform:rotate(15deg); animation: floaty 4s linear infinite; z-index:3; opacity:0.9; }
+  @keyframes floaty { 0%{transform: translateY(0) rotate(0deg) scale(1);} 50%{transform: translateY(-30px) rotate(45deg) scale(1.05);} 100%{transform: translateY(0) rotate(0deg) scale(1);} }
+  .marquee { position:fixed; bottom:0; width:100%; z-index:7; background: linear-gradient(90deg, rgba(0,0,0,0.05), rgba(255,255,255,0.15)); padding:6px 0; }
+  .marquee p{ display:inline-block; white-space:nowrap; animation: slide 12s linear infinite; font-weight:900; font-size:1.1rem; }
+  @keyframes slide{ 0%{transform:translateX(100%)} 100%{transform:translateX(-120%)} }
+  @media (max-width:600px){ h1{font-size:3.2rem; padding:8px;} .star{width:26px;height:26px;} }
 </style>
 </head>
 <body>
@@ -137,6 +41,7 @@
 
   <div class="controls">
     <button id="playBtn">▶ Play Sound (cheesy)</button>
+    <!-- Start/Stop werden ausgeblendet, weil das Feuerwerk automatisch und permanent laufen soll -->
     <button id="startBtn">✨ Start Fireworks</button>
     <button id="stopBtn">🛑 Stop Fireworks</button>
     <button id="fullBtn">🔍 Vollbild (für extra Trash)</button>
@@ -148,19 +53,17 @@
     <div style="margin-top:10px;">
       <img id="qrImage" alt="QR-Code" src="" width="200" height="200">
     </div>
-    <p style="font-size:.9rem;color:#333;margin-top:6px">Tipp: Lade diese Datei hoch, öffne die Seite, kopiere die URL in das Feld und klicke "QR erzeugen". Scan den QR dann mit dem Smartphone.</p>
+    <p style="font-size:.9rem;color:#333;margin-top:6px">Tipp: Lade diese Datei hoch, öffne die Seite, kopiere die URL in das Feld und klicke "QR erzeugen". Scan den angezeigten Code mit dem Smartphone.</p>
   </div>
 
-  <!-- tacky stars -->
   <div id="starsContainer"></div>
 
-  <div class="marquee"><p>★ ★ ★ DU BIST HEUTE DEr STAR! ★ ★ ★ HAPPY BIRTHDAY!!! ★ ★ ★</p></div>
+  <div class="marquee"><p>★ ★ ★ DU BIST HEUTE DER STAR! ★ ★ ★ HAPPY BIRTHDAY!!! ★ ★ ★</p></div>
 
 <script>
-/* ========== Stars (CSS elements) ========== */
+/* ========== Stars ========== */
 (function makeStars(){
   const container = document.getElementById('starsContainer');
-  const colors = ['#ff4da6','#ffd24d','#4de0ff','#aaff7f'];
   for(let i=0;i<7;i++){
     const s = document.createElement('div');
     s.className = 'star';
@@ -173,23 +76,18 @@
   }
 })();
 
-/* ========== QR generation (Google Chart API) ========== */
+/* ========== QR generation ========== */
 document.getElementById('genQR').addEventListener('click', function(){
   let url = document.getElementById('urlInput').value.trim();
   if(!url) url = window.location.href;
-  // Ensure proper encoding
   const enc = encodeURIComponent(url);
-  // Google Chart API for QR (simple & reliable)
   const size = 300;
   const qrUrl = `https://chart.googleapis.com/chart?cht=qr&chs=${size}x${size}&chl=${enc}`;
-  const img = document.getElementById('qrImage');
-  img.src = qrUrl;
+  document.getElementById('qrImage').src = qrUrl;
 });
+document.getElementById('urlInput').value = '';
 
-/* autofocus the URL input to convenience */
-document.getElementById('urlInput').value = ''; // keep empty by default
-
-/* ========== Fullscreen button ========== */
+/* ========== Fullscreen ========== */
 document.getElementById('fullBtn').addEventListener('click', async ()=>{
   try{
     if(!document.fullscreenElement) await document.documentElement.requestFullscreen();
@@ -197,7 +95,7 @@ document.getElementById('fullBtn').addEventListener('click', async ()=>{
   }catch(e){ console.warn('Fullscreen failed',e); }
 });
 
-/* ========== Fireworks on canvas (simple particle system) ========== */
+/* ========== Fireworks (particle system) ========== */
 const canvas = document.getElementById('fwCanvas');
 const ctx = canvas.getContext('2d');
 let W=canvas.width = innerWidth;
@@ -207,22 +105,22 @@ window.addEventListener('resize', ()=>{ W=canvas.width = innerWidth; H=canvas.he
 let particles = [];
 let rockets = [];
 let anim = null;
-let running = false;
+
+/* *** WICHTIGE ÄNDERUNG: Auto-start und dauerhaft laufen lassen *** */
+let running = true; // jetzt standardmäßig true — Feuerwerk läuft automatisch und dauerhaft
 
 function rand(min,max){ return Math.random()*(max-min)+min; }
 
 class Rocket {
   constructor(x,y,vx,vy,color){
-    this.x=x; this.y=y; this.vx=vx; this.vy=vy; this.color=color;
-    this.life=0;
+    this.x=x; this.y=y; this.vx=vx; this.vy=vy; this.color=color; this.life=0;
   }
   step(){
-    this.vy += 0.06; // gravity
+    this.vy += 0.06;
     this.x += this.vx;
     this.y += this.vy;
     this.life++;
-    if(this.vy>0 || this.life>80) {
-      // explode
+    if(this.vy>0 || this.life>80){
       createExplosion(this.x,this.y,this.color);
       return false;
     }
@@ -259,15 +157,14 @@ class Particle {
   }
 }
 
-function createExplosion(x,y, baseColor){
+function createExplosion(x,y){
   const count = 28 + Math.floor(Math.random()*36);
+  const colors = ['#ff4da6','#ffd24d','#4de0ff','#aaff7f','#ffffff','#ff7f4d'];
   for(let i=0;i<count;i++){
     const ang = Math.random()*Math.PI*2;
     const spd = Math.random()*4 + 1;
     const vx = Math.cos(ang)*spd;
     const vy = Math.sin(ang)*spd;
-    // vary color slightly
-    const colors = ['#ff4da6','#ffd24d','#4de0ff','#aaff7f','#ffffff','#ff7f4d'];
     const c = colors[Math.floor(Math.random()*colors.length)];
     particles.push(new Particle(x,y,vx,vy,c));
   }
@@ -276,71 +173,63 @@ function createExplosion(x,y, baseColor){
 function launchRandomRocket(){
   const x = rand(W*0.15, W*0.85);
   const y = H+10;
-  const tx = rand(50, H*0.5);
   const vx = rand(-1.2,1.2);
   const vy = -rand(6.5,9.0);
   rockets.push(new Rocket(x,y,vx,vy,'#fff'));
 }
 
 function frame(){
-  ctx.clearRect(0,0,W,H);
-  // slight lingering trails
+  // draw background with a tiny alpha for trailing effect
   ctx.fillStyle = 'rgba(0,0,0,0.15)';
   ctx.fillRect(0,0,W,H);
 
-  // rockets
   rockets = rockets.filter(r => {
     const alive = r.step();
     r.draw();
     return alive;
   });
-  // particles
   particles = particles.filter(p => {
     const alive = p.step();
     p.draw();
     return alive;
   });
 
-  // sometimes launch rockets automatically when running
+  // kontinuierliches Abschießen neuer Raketen (da running=true)
   if(running && Math.random() < 0.06) launchRandomRocket();
 
   anim = requestAnimationFrame(frame);
 }
 
-/* Start / stop control */
-document.getElementById('startBtn').addEventListener('click', ()=>{
-  if(!running){
-    running=true;
-    // create some initial rockets
-    for(let i=0;i<6;i++) setTimeout(()=>launchRandomRocket(), i*400);
-    if(!anim) frame();
-  }
-});
-document.getElementById('stopBtn').addEventListener('click', ()=>{
-  running=false;
-  // let existing particles finish, but stop launching
+/* ========== Auto-start beim Laden ========== */
+window.addEventListener('load', ()=>{
+  // initiale Salve von Raketen
+  for(let i=0;i<8;i++) setTimeout(()=>launchRandomRocket(), i*300);
+  // starte die Animations-Loop, falls noch nicht aktiv
+  if(!anim) frame();
+  // Buttons zum Start/Stop ausblenden, weil das Feuerwerk permanent laufen soll
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  if(startBtn) startBtn.style.display = 'none';
+  if(stopBtn) stopBtn.style.display = 'none';
 });
 
-/* ========== Sound: crude "Happy Birthday" synth via WebAudio ========== */
+/* Entferne Stop-Logik (Stop funktioniert nicht mehr) */
+/* (Die alten Listener bleiben, aber die Buttons sind versteckt.) */
+
+/* ========== Sound (manuell starten) ========== */
 const AudioCtx = window.AudioContext || window.webkitAudioContext;
 let audioCtx = null;
 function ensureAudio(){
   if(!audioCtx) audioCtx = new AudioCtx();
 }
-
-/* simple beepy melody (notes as frequencies) */
 const notes = {
   C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392.00, A4:440.00, B4:493.88,
-  C5:523.25, D5:587.33
+  C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99
 };
-/* a very short and silly "happy-ish" melody pattern */
 const melody = [
   ['G4',0.25], ['G4',0.25], ['A4',0.5], ['G4',0.5], ['C5',0.5], ['B4',1.0],
-  ['G4',0.25], ['G4',0.25], ['A4',0.5], ['G4',0.5], ['D5',0.5], ['C5',1.0],
-  ['G4',0.25], ['G4',0.25], ['G5',0.5], ['E5',0.5], ['C5',0.5], ['B4',0.5], ['A4',1.0],
-  ['F5',0.25], ['F5',0.25], ['E5',0.5], ['C5',0.5], ['D5',0.5], ['C5',1.0]
+  ['G4',0.25], ['G4',0.25], ['A4',0.5], ['G4',0.5], ['D5',0.5], ['C5',1.0]
 ];
-
 function playCheesyMelody(){
   ensureAudio();
   const now = audioCtx.currentTime + 0.05;
@@ -348,18 +237,16 @@ function playCheesyMelody(){
   melody.forEach(note=>{
     const osc = audioCtx.createOscillator();
     const gain = audioCtx.createGain();
-    osc.type = 'square'; // cheap midi-like sound
+    osc.type = 'square';
     osc.frequency.value = notes[note[0]] || 440;
     gain.gain.setValueAtTime(0, t);
     gain.gain.linearRampToValueAtTime(0.12, t+0.01);
     gain.gain.exponentialRampToValueAtTime(0.001, t + note[1]*0.9 + 0.01);
     osc.connect(gain); gain.connect(audioCtx.destination);
     osc.start(t); osc.stop(t + note[1] + 0.05);
-    t += note[1] * 0.9; // slight overlap
+    t += note[1] * 0.9;
   });
 }
-
-/* also a short party-sound bomb */
 function partyBoop(){
   ensureAudio();
   const o = audioCtx.createOscillator();
@@ -373,36 +260,24 @@ function partyBoop(){
   o.connect(g); g.connect(audioCtx.destination);
   o.start(); o.stop(audioCtx.currentTime + 0.3);
 }
-
-/* wiring play button */
 document.getElementById('playBtn').addEventListener('click', ()=>{
-  // Many browsers require a user gesture to allow audio — this click counts as one.
-  try {
-    playCheesyMelody();
-    // also trigger a little boop
-    setTimeout(partyBoop, 600);
-  } catch(e){ console.warn('Audio failed', e); }
+  try{ playCheesyMelody(); setTimeout(partyBoop, 600); }catch(e){ console.warn('Audio failed', e); }
 });
 
-/* autoplay attempt: try to play if user interacted */
-let userInteracted = false;
-window.addEventListener('pointerdown', ()=>{ userInteracted=true; }, {once:true});
-
-/* Small fun: clicking the title bursts more fireworks and sound */
+/* kleine Interaktion: Klick auf Titel löst Extra-Raketen (und Sound wenn man möchte) */
 document.getElementById('hb').addEventListener('click', ()=>{
   for(let i=0;i<8;i++){ setTimeout(()=>launchRandomRocket(), i*120); }
-  playCheesyMelody();
+  // playCheesyMelody(); // deaktiviert, weil Sound manuell gestartet werden sollte
 });
 
-/* Nice accessibility: pressing space toggles sound, F toggles fireworks */
+/* Keyboard shortcuts */
 window.addEventListener('keydown', (e)=>{
   if(e.code==='Space'){ e.preventDefault(); playCheesyMelody(); }
-  if(e.key.toLowerCase()==='f'){ document.getElementById('startBtn').click(); }
+  if(e.key.toLowerCase()==='f'){ document.getElementById('fullBtn').click(); }
 });
-
-/* initial playful attempt to start tiny animation */
-setTimeout(()=>{ /* small auto-flicker */ document.querySelector('.blink').style.animationDuration='0.6s'; }, 1200);
 </script>
 </body>
 </html>
+
+
 
